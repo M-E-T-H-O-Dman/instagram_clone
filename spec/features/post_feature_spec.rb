@@ -37,7 +37,7 @@ describe 'posts' do
       attach_file 'Picture', Rails.root.join('spec/images/pear_programming_250.png')
       click_button 'Create post'
 
-      expect(page).to have_cs 'img.uploaded-pic'
+      expect(page).to have_css 'img.uploaded-pic'
     end  
   end 
 end  
