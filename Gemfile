@@ -11,6 +11,7 @@ gem 'rspec-collection_matchers'
 end	
 
 gem 'paperclip', github: 'thoughtbot/paperclip'
+gem 'aws-sdk'
 
 gem 'execjs'
 gem 'therubyracer',  platforms: :ruby
