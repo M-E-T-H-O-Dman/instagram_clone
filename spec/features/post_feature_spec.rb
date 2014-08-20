@@ -1,15 +1,19 @@
 require 'rails_helper'
+include Warden::Test::Helpers
+Warden.test_mode!
 
 describe 'posts' do
   context 'no posts' do
-    it 'shows a message' do
+    it 'prompts login' do
     visit '/posts'
-    expect(page).to have_content 'No posts yet'
+    expect(page).to have_content "You need to sign in or sign up before continuing."
     end
   end
 
   context 'with posts' do
     before do 
+      charlie = User.create(email: 'a@a.com', password: '123456789', password_confirmation: '123456789')
+      login_as(charlie, :scope => :user)
       Post.create(title: 'Hello world')
     end
     
