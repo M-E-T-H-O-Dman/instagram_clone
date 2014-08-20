@@ -12,6 +12,7 @@ end
 
 gem 'paperclip', github: 'thoughtbot/paperclip'
 gem 'aws-sdk'
+gem 'devise'
 
 gem 'execjs'
 gem 'therubyracer',  platforms: :ruby
