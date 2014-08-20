@@ -1,6 +1,5 @@
 require 'rails_helper'
-include Warden::Test::Helpers
-Warden.test_mode!
+
 
 describe 'posts' do
   context 'no posts' do

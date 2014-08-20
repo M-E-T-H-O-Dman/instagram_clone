@@ -14,6 +14,8 @@ gem 'paperclip', github: 'thoughtbot/paperclip'
 gem 'aws-sdk'
 gem 'devise'
 gem 'warden'
+gem 'poltergeist'
+gem 'database_cleaner'
 
 gem 'execjs'
 gem 'therubyracer',  platforms: :ruby
