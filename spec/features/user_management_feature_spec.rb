@@ -8,8 +8,8 @@ describe 'User management' do
 
     it 'should not be able to post photos when logged out, and should prompt to sign in' do
       visit '/posts'
-      fill_in 'post_title', with: 'stuff'
-      click_button 'Add post'
+      fill_in 'Title', with: 'stuff'
+      click_button 'Create post'
       expect(page).to have_content "You need to sign in or sign up before continuing."
     end 
   end	
@@ -23,8 +23,8 @@ describe 'User management' do
 
     it 'should be able to post photos when logged in' do
       visit '/posts'
-      fill_in 'post_title', with: 'stuff'
-      click_button 'Add post'
+      fill_in 'Title', with: 'stuff'
+      click_button 'Create post'
       expect(page).to have_content 'stuff'
     end  
 	end

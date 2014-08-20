@@ -24,7 +24,11 @@ describe 'posts' do
   end 
 
   describe 'creating posts' do
-    it 'adds the posts from a from' do    
+    before do 
+      charlie = User.create(email: 'a@a.com', password: '123456789', password_confirmation: '123456789')
+      login_as(charlie, :scope => :user)
+    end
+    it 'adds the posts from a form' do    
       visit '/posts'
       click_link 'New post'
       fill_in 'Title', with: 'A brand new post'
