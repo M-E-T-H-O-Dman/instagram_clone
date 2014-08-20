@@ -4,6 +4,7 @@
     <% if post.picture.present? %>
     <%= image_tag post.picture.url(:medium), class: 'uploaded-pic'  %>
   <% end %>
+  <%= link_to 'So mainstream...', post_votes_path(post), method: :post %>
   <% post.tags.each do |tag| %>
   	<%= link_to tag.text, '#' %>
   	<% end %>
