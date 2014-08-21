@@ -5,7 +5,7 @@
     <%= image_tag post.picture.url(:medium), class: 'uploaded-pic'  %>
 		<% end %>
 		<div>
- 			<p id="mainstream"><%= link_to 'So mainstream...', post_votes_path(post), class: 'vote-link' %></span>
+ 			<p id="mainstream"><%= link_to 'So mainstream...', post_votes_path(post), class: 'vote-link' %></p>
  			<p class='vote-count'><%= post.votes.count*-1 %></p>
  		</div>	
   	<% post.tags.each do |tag| %>
