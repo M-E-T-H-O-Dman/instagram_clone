@@ -10,6 +10,7 @@ describe 'tagging posts' do
     click_link 'New post'
     fill_in 'Title', with: 'A brand new post'
     fill_in 'Tags', with: '#yolo, #swag'
+    attach_file 'Picture', Rails.root.join('spec/images/pear_programming_250.png')
     click_button 'Create post'
 
     expect(page).to have_link '#yolo'

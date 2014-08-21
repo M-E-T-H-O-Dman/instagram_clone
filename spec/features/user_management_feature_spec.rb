@@ -21,6 +21,7 @@ describe 'User management' do
       visit '/posts'
       click_link 'New post'
       fill_in 'Title', with: 'stuff'
+       attach_file 'Picture', Rails.root.join('spec/images/pear_programming_250.png')
       click_button 'Create post'
       expect(page).to have_content 'stuff'
     end  

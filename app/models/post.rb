@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-	 has_attached_file :picture, syles: { medium: "300x300>" },
+	 has_attached_file :picture, styles: { medium: "300x300>" },
 	  :storage => :s3,
   	:s3_credentials => {
     :bucket => 'hipstergram_makers',
@@ -10,7 +10,7 @@ class Post < ActiveRecord::Base
   validates :user_id, presence: { message: 'You must be signed in to post' }
   validates :title, presence: { message: 'Your post must have a title' }
   validates :picture, attachment_presence: { message: 'You must attach a photo' }
-  
+
   belongs_to :user
   validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
   has_many :votes
