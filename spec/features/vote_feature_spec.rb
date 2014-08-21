@@ -7,7 +7,7 @@ describe 'voting on posts' do
 		Post.create(title: "Hipster1")
 	end	
 
-	it 'can vote on posts, updating the posts vote count' do
+	it 'can vote on posts, updating the posts vote count', js: true do
 		visit '/posts'
 		click_link 'So mainstream...'
 		expect(page).to have_css('#mainstream', text: '-1')

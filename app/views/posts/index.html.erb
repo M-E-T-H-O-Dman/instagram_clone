@@ -4,10 +4,11 @@
     <% if post.picture.present? %>
     <%= image_tag post.picture.url(:medium), class: 'uploaded-pic'  %>
 		<% end %>
- 	<span id="mainstream"> <%= link_to 'So mainstream...', post_votes_path(post), method: :post %>
- 	<%= post.votes.count*-1 %>
- 	</span>
-  <% post.tags.each do |tag| %>
+		<div>
+ 			<p id="mainstream"><%= link_to 'So mainstream...', post_votes_path(post), class: 'vote-link' %></span>
+ 			<p class='vote-count'><%= post.votes.count*-1 %></p>
+ 		</div>	
+  	<% post.tags.each do |tag| %>
   	<%= link_to tag.text, '#' %>
   	<% end %>
   <% end %>	

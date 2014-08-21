@@ -3,6 +3,6 @@ class VotesController < ApplicationController
 		@post = Post.find(params[:post_id])
 		@post.votes.create
 
-		redirect_to '/posts'
+		render json: { new_vote_count: @post.votes.count }
 	end	
 end
