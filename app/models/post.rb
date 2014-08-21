@@ -6,6 +6,11 @@ class Post < ActiveRecord::Base
     :access_key_id => Rails.application.secrets.s3_access_key_id,
     :secret_access_key => Rails.application.secrets.s3_secret_access_key
   }
+
+  validates :user_id, presence: { message: 'You must be signed in to post' }
+  validates :title, presence: { message: 'Your post must have a title' }
+  validates :picture, attachment_presence: { message: 'You must attach a photo' }
+  
   belongs_to :user
   validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
   has_many :votes

@@ -2,6 +2,10 @@ require 'rails_helper'
 
 RSpec.describe Post, :type => :model do 
 	
+  let(:pic)   { Rack::Test::UploadedFile.new(Rails.root.join('spec/images/pear_programmin_250.png')) }
+  let(:user)  { User.create(email: 'a@a.com', password: '123456789', password_confirmation: '123456789')  }
+  let(:post) { Post.create(title: 'New post', picture: pic, user_id: user.id) }
+
 context 'validations' do
     
     it 'must have a title' do
