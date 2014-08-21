@@ -29,7 +29,6 @@ RSpec.describe Post, :type => :model do
     it 'is valid with a title, picture and user' do
       valid_post = Post.new(title: 'New post', picture: pic, user_id: user.id)
       expect(valid_post).to be_valid
-      expect(valid_post).to have_attached_file(:picture)
     end
   end
 
