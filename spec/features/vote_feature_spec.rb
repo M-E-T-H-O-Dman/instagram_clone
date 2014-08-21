@@ -10,6 +10,6 @@ describe 'voting on posts' do
 	it 'can vote on posts, updating the posts vote count', js: true do
 		visit '/posts'
 		click_link 'So mainstream...'
-		expect(page).to have_css('#mainstream', text: '-1')
+		expect(page).to have_css('p', text: '-1')
 	end	
 end	

@@ -2,7 +2,7 @@
   <% @posts.each do |post| %>
     <h3><%= post.title %></h3>
     <% if post.picture.present? %>
-    <%= image_tag post.picture.url(:medium), class: 'uploaded-pic'  %>
+   	 <%= image_tag post.picture.url(:medium), class: 'uploaded-pic'  %>
 		<% end %>
 		<div>
  			<p id="mainstream"><%= link_to 'So mainstream...', post_votes_path(post), class: 'vote-link' %></p>

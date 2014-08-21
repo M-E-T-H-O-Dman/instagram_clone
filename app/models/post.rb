@@ -6,6 +6,7 @@ class Post < ActiveRecord::Base
     :access_key_id => Rails.application.secrets.s3_access_key_id,
     :secret_access_key => Rails.application.secrets.s3_secret_access_key
   }
+  belongs_to :user
   validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
   has_many :votes
   has_and_belongs_to_many :tags
