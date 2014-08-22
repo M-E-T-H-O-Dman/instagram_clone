@@ -4,6 +4,9 @@
     <% if post.picture.present? %>
    	 <%= image_tag post.picture.url(:medium), class: 'uploaded-pic'  %>
 		<% end %>
+		<% unless post.address.blank? %>
+			<%= link__to 'Map', post_map_path(post), class: 'btn btn-danger' %>
+		<% end %>
 		<div>
  			<p id="mainstream"><%= link_to 'So mainstream...', post_votes_path(post), class: 'vote-link' %></p>
  			<p class='vote-count'><%= post.votes.count*-1 %></p>
