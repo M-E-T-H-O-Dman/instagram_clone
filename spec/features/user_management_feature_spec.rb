@@ -13,7 +13,7 @@ describe 'User management' do
   context 'logged in' do
 
     before do 
-      charlie = User.create(email: 'a@a.com', password: '123456789', password_confirmation: '123456789')
+      charlie = charlie = create(:user)
       login_as(charlie, :scope => :user)
     end  
 

@@ -14,10 +14,9 @@ describe 'with posts' do
   
   context 'with posts' do
     before do 
-      charlie = User.create(email: 'a@a.com', password: '123456789', password_confirmation: '123456789')
+      charlie = create(:user)
       login_as(charlie, :scope => :user)
-      Post.create(title: 'Hello world', picture: File.new(Rails.root.join('spec/images/pear_programming_250.png')), user_id: User.first.id)
-    end
+      create(:post)
     
     it 'displays a list of all posts' do
       visit '/posts'
@@ -27,7 +26,7 @@ describe 'with posts' do
 
   describe 'creating posts' do
     before do 
-      charlie = User.create(email: 'a@a.com', password: '123456789', password_confirmation: '123456789')
+      charlie = create(:user)
       login_as(charlie, :scope => :user)
      
     end
@@ -45,7 +44,7 @@ describe 'with posts' do
   describe 'attaching images' do
 
     before do 
-      charlie = User.create(email: 'a@a.com', password: '123456789', password_confirmation: '123456789')
+      charlie = create(:user)
       login_as(charlie, :scope => :user)
     end
     it 'can attach an image to a post' do
