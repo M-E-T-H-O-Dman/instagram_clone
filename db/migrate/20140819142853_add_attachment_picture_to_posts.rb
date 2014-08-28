@@ -8,4 +8,6 @@ class AddAttachmentPictureToPosts < ActiveRecord::Migration
   def self.down
     remove_attachment :posts, :picture
   end
+  
 end
+

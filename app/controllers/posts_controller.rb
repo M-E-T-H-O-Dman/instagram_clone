@@ -11,8 +11,9 @@ before_action :authenticate_user!
 	end	
 
 	def create
-		@post = Post.new(params[:post].permit(:title, :picture, :tag_list, :address))
+		@post = Post.new(params[:post].permit(:title, :picture, :tag_list, :address, :map))
 		@post.user = current_user
+		@post.map = Map.create
 		@post.save
 		redirect_to '/posts'
 	end	

@@ -10,7 +10,7 @@ gem 'rspec-collection_matchers'
 
 end	
 
-gem 'paperclip', github: 'thoughtbot/paperclip'
+gem 'paperclip', git: 'git@github.com:thoughtbot/paperclip.git'
 gem 'aws-sdk'
 gem 'devise'
 gem 'warden'
