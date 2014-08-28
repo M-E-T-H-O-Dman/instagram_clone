@@ -16,6 +16,7 @@ gem 'devise'
 gem 'warden'
 gem 'poltergeist'
 gem 'database_cleaner'
+gem 'bootstrap-sass'
 
 gem 'execjs'
 gem 'therubyracer',  platforms: :ruby
