@@ -9,7 +9,7 @@ root to: "posts#index"
   end 
 
   resources :posts do
-    resources :maps
+    resource :map
   end  
 
 
