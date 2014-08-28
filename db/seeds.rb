@@ -7,5 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Post.destroy_all
-test_user = User.create(email: 'a@a.com', password: '123456789', password_confirmation: '123456789')
-test_post = Post.create(title: "Hipster1")
+User.create(email: 'a@a.com', password: '123456789', password_confirmation: '123456789')
+Post.create(title: 'Hello world', picture: IO.read(Rails.root.join('spec/images/pear_programming_250.png')), user_id: User.first.id)
+Post.create(title: 'Hello world', picture: IO.read(Rails.root.join('spec/images/pear_programming_250.png')), user_id: User.first.id)
+Post.create(title: 'Hello world', picture: IO.read(Rails.root.join('spec/images/pear_programming_250.png')), user_id: User.first.id)

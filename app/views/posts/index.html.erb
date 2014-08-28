@@ -1,22 +1,26 @@
-<% if @posts.any? %>
-  <% @posts.each do |post| %>
-    <h3><%= post.title %></h3>
-    <% if post.picture.present? %>
-   	 <%= image_tag post.picture.url(:medium), class: 'uploaded-pic'  %>
-		<% end %>
-		<% unless post.address.blank? %>
-			<%= link_to 'Map', post_map_path(post, post.map), class: 'btn btn-danger' %>
-		<% end %>
-		<div>
- 			<p id="mainstream"><%= link_to 'So mainstream...', post_votes_path(post), class: 'vote-link' %></p>
- 			<p class='vote-count'><%= post.votes.count*-1 %></p>
- 		</div>	
-  	<% post.tags.each do |tag| %>
-  	<%= link_to tag.text, '#' %>
-  	<% end %>
-  <% end %>	
-	<% else %>	
-	No posts yet
-<% end %>
+<main class='container'>
+  <% if @posts.any? %>
+  <section class = 'row'>
+    <% @posts.each do |post| %>
+      <h3><%= post.title %></h3>
+      <% if post.picture.present? %>
+     	 <%= image_tag post.picture.url(:medium), class: 'uploaded-pic'  %>
+  		<% end %>
+  		<% unless post.address.blank? %>
+  			<%= link_to 'Map', post_map_path(post, post.map), class: 'btn btn-danger' %>
+  		<% end %>
+  		<div>
+   			<p id="mainstream"><%= link_to 'So mainstream...', post_votes_path(post), class: 'vote-link' %></p>
+   			<p class='vote-count'><%= post.votes.count*-1 %></p>
+   		</div>	
+    	<% post.tags.each do |tag| %>
+    	<%= link_to tag.text, '#' %>
+    	<% end %>
+    <% end %>	
+  	<% else %>	
+  	No posts yet
+  <% end %>
 
-<%= link_to 'New post', new_post_path %>
+  <%= link_to 'New post', new_post_path %>
+  </section>
+</main>
