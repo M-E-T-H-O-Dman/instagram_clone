@@ -17,4 +17,9 @@ before_action :authenticate_user!
 		@post.save
 		redirect_to '/posts'
 	end	
+
+
+	def show
+		@post = Post.find(params[:id])
+	end	
 end
