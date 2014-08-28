@@ -17,6 +17,7 @@ gem 'warden'
 gem 'poltergeist'
 gem 'database_cleaner'
 gem 'bootstrap-sass'
+gem 'autoprefixer-rails'
 
 gem 'execjs'
 gem 'therubyracer',  platforms: :ruby
