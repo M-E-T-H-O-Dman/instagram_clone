@@ -17,7 +17,7 @@ describe 'with posts' do
       charlie = create(:user)
       login_as(charlie, :scope => :user)
       create(:post)
-    
+    end
     it 'displays a list of all posts' do
       visit '/posts'
       expect(page).to have_content 'Hello world'

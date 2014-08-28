@@ -5,7 +5,7 @@ describe 'maps' do
 	before do
 		charlie = create(:user)
 		create(:post)
-
+	end
 	it 'displays a map when the Map button is clicked', js: true do
 		visit '/posts'
 		click_link 'Map'
