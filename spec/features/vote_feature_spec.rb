@@ -4,7 +4,7 @@ describe 'voting on posts' do
 	before do
 		charlie = charlie = create(:user)
     	login_as(charlie, :scope => :user)
-		Post.create(title: 'New post', picture: File.new(Rails.root.join('spec/images/pear_programming_250.png')), user_id: user.id)
+		Post.create(title: 'New post', picture: File.new(Rails.root.join('spec/images/pear_programming_250.png')), user_id: User.first.id)
 	end	
 
 	it 'can vote on posts, updating the posts vote count', js: true do
