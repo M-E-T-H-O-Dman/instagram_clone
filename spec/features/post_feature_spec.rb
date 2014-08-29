@@ -4,7 +4,7 @@ describe 'with no posts' do
   context 'no posts' do
     it 'prompts login' do
     visit '/posts'
-    expect(page).to have_content "You need to sign in or sign up before continuing."
+    expect(page).to have_content "No posts yet"
     end
   end
 end
@@ -16,7 +16,7 @@ describe 'with posts' do
     before do 
       charlie = create(:user)
       login_as(charlie, :scope => :user)
-      create(:post)
+      Post.create(title: 'New post', picture: File.new(Rails.root.join('spec/images/pear_programming_250.png')), user_id: user.id)
     end
     it 'displays a list of all posts' do
       visit '/posts'

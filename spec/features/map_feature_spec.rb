@@ -4,7 +4,8 @@ require 'rails_helper'
 describe 'maps' do 
 	before do
 		charlie = create(:user)
-		create(:post)
+		login_as(charlie, :scope => :user)
+		Post.create(title: 'New post', picture: File.new(Rails.root.join('spec/images/pear_programming_250.png')), user_id: user.id)
 	end
 	it 'displays a map when the Map button is clicked', js: true do
 		visit '/posts'
